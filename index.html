@@ -549,20 +549,23 @@
     
         <div class="content">
             <div class="box form wow slideInLeft">
-               <form>
-                  <input type="text" placeholder="Enter Name" autocomplete="off">
-                  <input type="Email" placeholder="Enter Email" autocomplete="off">
-                  <input type="text" placeholder="Enter Mobile">
-                  <textarea placeholder="Enter Message"></textarea>
+               <form autocomplete="off">
+                  <input type="text" placeholder="Enter Name" required>
+                  <input type="Email" placeholder="Enter Email" required>
+                  <input type="text" id="mobile" value="" placeholder="Enter Mobile" onkeypress="isInputNumber(event)" >
+
+                  <textarea placeholder="Enter Message" required></textarea>
+                 
+                 
                   <button type="submit">Send Message</button>
-               </form>
+
+            </form>
             </div>
         </div>
     </div>
 
 </section>
 <!-- END-->
-
 
 <!-- Slideshow container START -->
 <section class="reviews">
@@ -816,6 +819,16 @@ if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
 return false;
 }
 }
+	//take only number input
+   function isInputNumber(evt){
+                
+                var ch = String.fromCharCode(evt.which);
+                
+                if(!(/[0-9]/.test(ch))){
+                    evt.preventDefault();
+                }
+                
+            }
 
       
 
